@@ -1,31 +1,44 @@
 package com.alicrud_2.rest_demo.controller;
 
 import com.alicrud_2.rest_demo.model.cloudVendor;
+import com.alicrud_2.rest_demo.service.cloudVendorService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/cloudvendor")
 
 public class cloudAPIService {
-    cloudVendor cloudVendor;
+    cloudVendorService cloudVendorService;
+    public cloudAPIService(cloudVendorService cloudVendorService) {
+        this.cloudVendorService = cloudVendorService;
+    }
+    //this is for read particular data.
     @GetMapping("{vendorId}")
-    public cloudVendor getcloudVendorDetails(String vendorId)
+    public cloudVendor getcloudVendorDetails(@PathVariable("vendorId") String vendorId)
     {
-        return cloudVendor;
+        return cloudVendorService.getCloudVendor(vendorId);
+    }
+    // this is for read all data.
+    @GetMapping()
+    public List<cloudVendor> getAllcloudVendorDetails()
+    {
+        return cloudVendorService.getAllCloudVendors();
     }
     @PostMapping
     public String createCloudVendor(@RequestBody cloudVendor cloudVendor){
-        this.cloudVendor=cloudVendor;
+        cloudVendorService.createCloudVendor(cloudVendor);
         return "cloud vendor details are created successfully";
     }
     @PutMapping
     public String updateCloudVendor(@RequestBody cloudVendor cloudVendor){
-        this.cloudVendor=cloudVendor;
+        cloudVendorService.updateCloudVendor(cloudVendor);
         return "cloud vendor data updated successfully";
     }
     @DeleteMapping("{vendorId}")
-    public String deleteCloudVendor(String vendorId){
-        this.cloudVendor=null;
+    public String deleteCloudVendor(@PathVariable("vendorId") String vendorId){
+        cloudVendorService.deleteCloudVendor(vendorId);
         return "cloud vendor data deleted successfully";
     }
 
