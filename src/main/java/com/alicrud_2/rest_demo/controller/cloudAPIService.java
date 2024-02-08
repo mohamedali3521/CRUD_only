@@ -1,7 +1,10 @@
 package com.alicrud_2.rest_demo.controller;
 
 import com.alicrud_2.rest_demo.model.cloudVendor;
+import com.alicrud_2.rest_demo.response.responseHandler;
 import com.alicrud_2.rest_demo.service.cloudVendorService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,9 +19,10 @@ public class cloudAPIService {
     }
     //this is for read particular data.
     @GetMapping("{vendorId}")
-    public cloudVendor getcloudVendorDetails(@PathVariable("vendorId") String vendorId)
+    public ResponseEntity<Object> getcloudVendorDetails(@PathVariable("vendorId") String vendorId)
     {
-        return cloudVendorService.getCloudVendor(vendorId);
+        return responseHandler.responseBuilder("the given id details are", HttpStatus.OK,
+                cloudVendorService.getCloudVendor(vendorId));
     }
     // this is for read all data.
     @GetMapping()
