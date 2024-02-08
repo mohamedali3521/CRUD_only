@@ -1,5 +1,6 @@
 package com.alicrud_2.rest_demo.service.implement;
 
+import com.alicrud_2.rest_demo.exception.cloudVendorNotFoundException;
 import com.alicrud_2.rest_demo.model.cloudVendor;
 import com.alicrud_2.rest_demo.repository.cloudVendorRepository;
 import com.alicrud_2.rest_demo.service.cloudVendorService;
@@ -33,6 +34,8 @@ public class cloudServiceImplements implements cloudVendorService {
 
     @Override
     public cloudVendor getCloudVendor(String cloudVendorId) {
+        if(cloudVendorRepository.findById(cloudVendorId).isEmpty())  // is this how we check that given id is empty or not
+            throw  new cloudVendorNotFoundException("the given user id is not found"); //this is how we throw the exception with message
         return cloudVendorRepository.findById(cloudVendorId).get();//this is to get the single user data by using the id.
     }
 
