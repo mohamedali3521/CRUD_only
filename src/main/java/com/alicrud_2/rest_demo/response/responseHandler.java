@@ -13,6 +13,6 @@ public class responseHandler { // this code is for custom response.
         response.put("message",message);
         response.put("httpStatus",httpstatus);
         response.put("data",responseObject);
-        return new ResponseEntity<>(response,httpstatus);
+        return new ResponseEntity<>(response,httpstatus); // here it makes the given data with it according to hashmap.
     }
 }

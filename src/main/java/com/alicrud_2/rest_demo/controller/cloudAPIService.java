@@ -22,7 +22,7 @@ public class cloudAPIService {
     public ResponseEntity<Object> getcloudVendorDetails(@PathVariable("vendorId") String vendorId)
     {
         return responseHandler.responseBuilder("the given id details are", HttpStatus.OK,
-                cloudVendorService.getCloudVendor(vendorId));
+                cloudVendorService.getCloudVendor(vendorId)); // here it returns to the response handler, and it shows the custom data which with more detailed, that we have given in the response handler.
     }
     // this is for read all data.
     @GetMapping()
