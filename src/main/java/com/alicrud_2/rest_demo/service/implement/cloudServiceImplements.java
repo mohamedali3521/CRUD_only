@@ -17,13 +17,13 @@ public class cloudServiceImplements implements cloudVendorService {
     @Override
     public String createCloudVendor(cloudVendor cloudVendor) {
         cloudVendorRepository.save(cloudVendor);// this is for add the user details into the database by using save method.we also take the variables from cloud vendor from model.
-        return "table created succesfully";
+        return "details added succesfully";
     }
 
     @Override
     public String updateCloudVendor(cloudVendor cloudVendor) {
         cloudVendorRepository.save(cloudVendor);// this is for update which more over to the create.
-        return "table updated successfully";
+        return "details updated successfully";
     }
 
     @Override

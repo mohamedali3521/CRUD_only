@@ -11,20 +11,20 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DataJpaTest
+@DataJpaTest  //This is a test annotation provided by Spring Boot for JPA tests. It configures the test with an in-memory database and sets up Spring Data JPA repositories, making it suitable for testing JPA-related components.
 public class cloudVendorRepositoryTest {
-    @Autowired
+    @Autowired  //This annotation is used to automatically inject dependencies by Spring. In this case, it injects the cloudVendorRepository instance into the test class.
     private cloudVendorRepository cloudVendorRepository;
     cloudVendor cloudVendor;
 
-    @BeforeEach
+    @BeforeEach // This annotation denotes a method that should be run before each test method.
     void setUp() {
         cloudVendor=new cloudVendor("2","faizal","tj","111");
         cloudVendorRepository.save(cloudVendor);
 
     }
 
-    @AfterEach
+    @AfterEach //This annotation denotes a method that should be run after each test method.
     void tearDown() {
         cloudVendor=null;
         cloudVendorRepository.deleteAll();
