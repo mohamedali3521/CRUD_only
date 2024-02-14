@@ -1,0 +1,28 @@
+---------------------------------SPRING-BOOT------------------------------------------------------
+Springboot is framework for the java.
+1. @SpringBootApplication -  is an annotation in the Spring Framework for Java which is used to mark a class as a Spring Boot application. It is a combination of multiple annotations that provide features for Spring Boot applications.
+
+                            Here's what @SpringBootApplication does:
+
+                            @SpringBootConfiguration: Indicates that the class provides configuration to the Spring application context.
+                            @EnableAutoConfiguration: Enables Spring Boot's auto-configuration mechanism which automatically configures your Spring application based on the dependencies you have added to the project.
+                            @ComponentScan: Tells Spring to scan and discover beans (components, configurations, etc.) automatically, starting from the package of the class where @SpringBootApplication is declared and its sub-packages.
+
+
+2. @Entity - is an annotation in Java used in the Java Persistence API (JPA) to mark a Java class as a persistent entity. In the context of JPA, an entity represents a table in a relational database.
+
+3. @Table(name="__tableName__") - it is to create the table name in the database.
+
+4. @Id - annotation in Java, specifically in the context of JPA (Java Persistence API), is used to designate the primary key of an entity. It marks a field in a Java class as the primary key for the corresponding database table.
+
+5. @RestController - is actually a combination of @Controller and @ResponseBody annotations. The @Controller annotation marks the class as a Spring MVC controller while @ResponseBody tells Spring that the return value of the methods should be serialized directly to the HTTP response body.
+
+6. @RequestMapping("/") - it is for url purpose.
+
+7. @GetMapping - it is for get the all the details in the database.
+
+8. @PostMapping -  it is for create the details into the database.
+
+9. @PutMapping - it is for edit the details into the database.
+
+10. @DeleteMapping - it is for delete the the particular details in the database.
