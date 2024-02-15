@@ -26,3 +26,9 @@ Springboot is framework for the java.
 9. @PutMapping - it is for edit the details into the database.
 
 10. @DeleteMapping - it is for delete the the particular details in the database.
+
+11. @PathVariable - is an annotation used in Spring Framework for Java to handle dynamic parts of a URL in a web application. In Spring MVC, @PathVariable is used to extract values from the URI template.
+
+12. @RequestBody - When a client sends a POST or PUT request with a JSON or XML payload, Spring can automatically deserialize that body into a Java object using the Jackson JSON library or other similar libraries.
+
+13. @Service -  annotation is primarily used to categorize and distinguish service layer components from other types of Spring-managed components, such as controllers or repositories.
