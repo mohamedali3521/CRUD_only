@@ -1,14 +1,6 @@
 package com.alicrud_2.rest_demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name="cloud_vendor_info")
 public class cloudVendor {
-    @Id
     private String vendorId;
     private String vendorName;
     private String vendorAddress;
